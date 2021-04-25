@@ -9,6 +9,11 @@ This repository brings the power of rclone to aws lambda. It can be used along w
 Unfortunately no public layer is available. Fear no more, this one-liner automatically provisions one in your own account.
 
 ```bash
+# Retrieve this code
+git clone https://github.com/badouralix/rclone-lambda-layer.git
+cd rclone-lambda-layer
+
+# Create the actual lambda layer
 make all
 ```
 
