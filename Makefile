@@ -1,5 +1,5 @@
 LAYER_NAME = rclone
-RCLONE_VERSION = v1.55.0
+RCLONE_VERSION = v1.55.1
 
 build:
 	mkdir -p build/layer/bin/ dist/
