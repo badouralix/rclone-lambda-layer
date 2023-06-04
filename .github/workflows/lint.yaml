@@ -1,0 +1,23 @@
+name: lint
+
+on:  # yamllint disable-line rule:truthy
+  pull_request:
+  push:
+    branches:
+    - main
+
+jobs:
+  markdown-lint:
+    name: markdown-lint
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: DavidAnson/markdownlint-cli2-action@v10
+      with:
+        globs: "**/*.md"
+  yaml-lint:
+    name: yaml-lint
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: ibiqlik/action-yamllint@v3
