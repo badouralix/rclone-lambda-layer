@@ -6,7 +6,7 @@ This repository brings the power of rclone to aws lambda. It can be used along w
 
 ## Usage
 
-Unfortunately no public layer is available. Fear no more, this Short snippet automatically provisions a custom layer containing rclone in your own AWS tenant.
+Unfortunately no public layer is available. Fear no more, this short snippet automatically provisions a custom layer containing rclone in your own AWS tenant.
 
 1. Launch [AWS CloudShell](https://console.aws.amazon.com/cloudshell) and run below commands:
 
