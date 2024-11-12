@@ -6,7 +6,7 @@ This repository brings the power of rclone to aws lambda. It can be used along w
 
 ## Usage
 
-Unfortunately no public layer is available. Fear no more, this one-liner automatically provisions one in your own account.
+Unfortunately no public layer is available. Fear no more, this Short snippet automatically provisions a custom layer containing rclone in your own AWS tenant.
 
 1. Launch [AWS CloudShell](https://console.aws.amazon.com/cloudshell) and run below commands:
 
@@ -28,12 +28,12 @@ Unfortunately no public layer is available. Fear no more, this one-liner automat
 
 Create a new lambda function:
 
-- Runtime: NodeJS V20+
-- **Important:** Attach the custom uploaded layer to your lambda (I had to use layer ARN to add it in)
+- Runtime: NodeJS V20+ (arm64 likely preferred, amd64 should work fine too)
+- **Important:** Attach the custom uploaded layer (with correct arch) to your lambda (I had to use layer ARN to add it in)
 - **Important:** INCREASE the timeout for the newly created lamda (default 3 seconds) - the lambda will not be able to even complete a failed run in 3 seconds, so increase timeout to at least 60 seconds if not 5 minutes+.
 - Tested 2024-Nov: A failed run (intentionally wrong password) completed in ~15 seconds. A successfull run completed a synced ~6GB/5000+ object vault in ~1.30minutes. Logs successfully showed correct statuses (info, warnings, errors, fatals).
 - Below code uses a rclone "one-liner" that doesn't need a config file as all the needed values are provided within the command.
-   - If you need config file, or want python, or a more featured example then [check here](https://github.com/badouralix/rclone-lambda-sync)
+  - If you need config file, or want python, or a more featured example then [check here](https://github.com/badouralix/rclone-lambda-sync)
 
 ```js
 // index.mjs
