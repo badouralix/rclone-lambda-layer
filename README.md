@@ -10,19 +10,19 @@ Unfortunately no public layer is available. Fear no more, this one-liner automat
 
 1. Launch [AWS CloudShell](https://console.aws.amazon.com/cloudshell) and run below commands:
 
-```bash
-# Retrieve this code
-git clone https://github.com/badouralix/rclone-lambda-layer.git
-cd rclone-lambda-layer
+    ```bash
+    # Retrieve this code
+    git clone https://github.com/badouralix/rclone-lambda-layer.git
+    cd rclone-lambda-layer
 
-# Build AND Publish lambda layer to your AWS Account (make script does both automatically)
-make all-amd64
-make all-arm64
-```
+    # Build AND publish lambda layer to your AWS Account (make script does both automatically)
+    make all-amd64
+    make all-arm64
+    ```
 
-2. Add the newly added layer to your Lambda function. You may have to provide the specific ARN of your newly created layer to the lambda function.
+1. Add the newly added layer to your Lambda function. You may have to provide the specific ARN of your newly created layer to the lambda function.
 
-![arn:aws:lambda:eu-west-3:123456789012:layer:rclone:4](https://user-images.githubusercontent.com/19719047/114280672-b0cdf380-9a3a-11eb-8850-c2dfe59ad97b.png)
+    ![arn:aws:lambda:eu-west-3:123456789012:layer:rclone:4](https://user-images.githubusercontent.com/19719047/114280672-b0cdf380-9a3a-11eb-8850-c2dfe59ad97b.png)
 
 ## License
 
