@@ -25,15 +25,15 @@ Unfortunately no public layer is available. Fear no more, this one-liner automat
     ![arn:aws:lambda:eu-west-3:123456789012:layer:rclone:4](https://user-images.githubusercontent.com/19719047/114280672-b0cdf380-9a3a-11eb-8850-c2dfe59ad97b.png)
 
 ## Example Lambda (NodeJS v20+)
-Create a new lambda function:
-   - Runtime: NodeJS V20+
-   - **Important:** Attach the custom uploaded layer to your lambda (I had to use layer ARN to add it in)
-   - **Important:** INCREASE the timeout for the newly created lamda (default 3 seconds) - the lambda will not be able to even complete a failed run in 3 seconds, so increase timeout to at least 60 seconds if not 5 minutes+.
-   - Tested 2024-Nov: A failed run (intentionally wrong password) completed in ~15 seconds. A successfull run completed a synced ~6GB/5000+ object vault in ~1.30minutes. Logs successfully showed correct statuses (info, warnings, errors, fatals).
-   - Below code uses a rclone "one-liner" that doesn't need a config file as all the needed values are provided within the command.
-       - If you need config file, or want python, or a more featured example then [check here](https://github.com/badouralix/rclone-lambda-sync)
 
-**index.mjs**
+Create a new lambda function:
+
+- Runtime: NodeJS V20+
+- **Important:** Attach the custom uploaded layer to your lambda (I had to use layer ARN to add it in)
+- **Important:** INCREASE the timeout for the newly created lamda (default 3 seconds) - the lambda will not be able to even complete a failed run in 3 seconds, so increase timeout to at least 60 seconds if not 5 minutes+.
+- Tested 2024-Nov: A failed run (intentionally wrong password) completed in ~15 seconds. A successfull run completed a synced ~6GB/5000+ object vault in ~1.30minutes. Logs successfully showed correct statuses (info, warnings, errors, fatals).
+- Below code uses a rclone "one-liner" that doesn't need a config file as all the needed values are provided within the command.
+   - If you need config file, or want python, or a more featured example then [check here](https://github.com/badouralix/rclone-lambda-sync)
 
 ```js
 // index.mjs
