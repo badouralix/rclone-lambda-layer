@@ -1,5 +1,5 @@
 LAYER_NAME_PREFIX = rclone
-RCLONE_VERSION = v1.69.2
+RCLONE_VERSION = v1.69.3
 
 build-amd64:
 	mkdir -p build/layer-amd64/bin/ dist/
