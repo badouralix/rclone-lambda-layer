@@ -6,8 +6,8 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": [
-        "^Makefile$"
+      "managerFilePatterns": [
+        "/^Makefile$/"
       ],
       "matchStrings": [
         "RCLONE_VERSION\\s*=\\s*(?<currentValue>\\S+)"
